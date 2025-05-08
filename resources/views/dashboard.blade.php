@@ -12,6 +12,9 @@
                     {{ __("You're logged in!") }}
                 </div>
             </div>
+            <div class="bg-white">
+              <a href="{{ route('home')}}">トップページ</a>
+            </div>
         </div>
     </div>
 </x-app-layout>

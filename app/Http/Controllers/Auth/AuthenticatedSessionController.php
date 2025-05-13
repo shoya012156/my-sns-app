@@ -30,7 +30,7 @@ class AuthenticatedSessionController extends Controller
 
         $userId = Auth::user()->id;
 
-        return redirect()->intended(route('home', absolute: false));
+        return redirect()->route('home');
     }
 
     /**

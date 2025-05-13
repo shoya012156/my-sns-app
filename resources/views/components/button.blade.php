@@ -1,1 +1,1 @@
-<input type="button" value="投稿する" class="h-12 px-10 m-3 bg-black text-white rounded-3xl cursor-pointer hover:bg-gray-900">
+<input type="submit" value="投稿する" class="h-12 px-10 m-3 bg-black text-white rounded-3xl cursor-pointer hover:bg-gray-900">

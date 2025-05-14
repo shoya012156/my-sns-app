@@ -10,7 +10,7 @@ class TweetController extends Controller
 {
   public function index()
   {
-    $tweets = Tweet::all();
+    $tweets = Tweet::orderBy('id','desc')->get();
     return view('home', compact('tweets'));
   }
 

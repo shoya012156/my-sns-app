@@ -23,8 +23,8 @@
         </a>
       </h1>
       <ul class="flex flex-col mt-6 text-2xl font-bold gap-6 justify-center">
-        <li><a href="">ホーム</a></li>
-        <li><a href="">プロフィール</a></li>
+        <li><a href="{{ route('home') }}">ホーム</a></li>
+        <li><a href="{{ route('profile.edit') }}">プロフィール</a></li>
         <li><a href="">ログアウト</a></li>
       </ul>
       <div class="flex items-center">

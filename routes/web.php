@@ -7,11 +7,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth')->group(function () {
   Route::get('/home',[TweetController::class, 'index'])->name('home');
-  
+
   Route::post('/tweets',[TweetController::class, 'store'])->name('tweets.store');
-  
+
   Route::get('/tweets/{id}',[TweetController::class, 'show'])->name('tweets.show');
-  
+
   Route::resource('replies',ReplyController::class);
 });
 

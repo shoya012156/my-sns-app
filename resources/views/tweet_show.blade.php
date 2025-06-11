@@ -3,6 +3,7 @@
 @section('title','リプライ')
 
 @section('main')
+<x-flash-message namespace="reply" />
 <div class="flex flex-col gap-2 px-6 py-6">
   <div class="flex items-center">
     <img src="{{ asset('images/user-icon.png') }}" alt="" class="h-14 leading-none">

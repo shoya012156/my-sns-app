@@ -21,7 +21,7 @@ class TweetController extends Controller
     $tweet->tweet=$request->tweet;
     $tweet->user_id=Auth::id();
     $tweet->save();
-    return redirect()->route('home');
+    return redirect()->route('home')->with('tweet.success','ツイートを投稿しました');
   }
 
   // ツイートのidによって詳細の表示をさせる
@@ -30,7 +30,7 @@ class TweetController extends Controller
     $tweet = Tweet::with('replies')
     ->orderBy('id','desc')
     ->findOrFail($id);
-    return view('tweet_show', compact('tweet'));    
+    return view('tweet_show', compact('tweet'));
   }
 
 }

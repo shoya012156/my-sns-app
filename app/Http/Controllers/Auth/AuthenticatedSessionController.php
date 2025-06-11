@@ -30,7 +30,7 @@ class AuthenticatedSessionController extends Controller
 
         $userId = Auth::user()->id;
 
-        return redirect()->route('home');
+        return redirect()->route('home')->with('login.success', 'ログインに成功しました！');
     }
 
     /**
@@ -44,6 +44,6 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect()->route('login');
+        return redirect()->route('login')->with('logout.success','ログアウトしました');
     }
 }

@@ -9,11 +9,11 @@ use App\Models\Reply;
 class ReplyController extends Controller
 {
     /**
-     * 
+     *
      */
     public function index()
     {
-    
+
     }
 
     /**
@@ -40,7 +40,7 @@ class ReplyController extends Controller
         'tweet_id' => $validated['tweet_id'],
         'reply' => $reply
       ]);
-      return redirect()->route('tweets.show',['id' => $validated['tweet_id']]);
+      return redirect()->route('tweets.show',['id' => $validated['tweet_id']])->with('reply.success','返信しました');
     }
 
     /**

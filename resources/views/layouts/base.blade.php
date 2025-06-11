@@ -3,6 +3,9 @@
 @include('layouts.head')
 
 <body>
+  <x-flash-message namespace="login" />
+  <x-flash-message namespace="register" />
+
   <div class="grid grid-cols-[200px,1fr] max-w-5xl h-auto mx-auto my-0 relative">
     <aside class="h-screen sticky top-0 flex flex-col justify-between overflow-hidden py-4">
       <h1>

@@ -9,7 +9,7 @@
     <img src="{{ asset('images/user-icon.png') }}" alt="" class="h-14 leading-none">
     <p class="font-semibold text-lg">{{ $tweet->user->first_name }}{{ $tweet->user->last_name }}</p>
   </div>
-  <p class="tracking-wide pb-2 pl-2 text-xl">{{ $tweet->tweet }}</p>
+  <p class="tracking-wide pb-2 pl-2 text-base">{{ $tweet->tweet }}</p>
 </div>
 <form action="{{ route('replies.store') }}" method="post" class="border-t-2 border-b-2 border-gray-100 text-right">
   @csrf
@@ -23,7 +23,7 @@
     <img src="{{ asset('images/user-icon.png') }}" alt="" class="h-14 leading-none">
     <p class="font-semibold text-lg">{{ $reply->user->first_name }}{{ $reply->user->last_name }}</p>
   </div>
-  <p class="tracking-wide pb-2 pl-2 text-xl">{{ $reply->reply }}</p>
+  <p class="tracking-wide pb-2 pl-2 text-base">{{ $reply->reply }}</p>
 </div>
 @endforeach
 @endsection

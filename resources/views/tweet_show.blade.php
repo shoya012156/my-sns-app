@@ -14,7 +14,8 @@
 <form action="{{ route('replies.store') }}" method="post" class="border-t-2 border-b-2 border-gray-100 text-right">
   @csrf
   <input type="hidden" name="tweet_id" value="{{$tweet->id}}">
-  <textarea name="reply" id="reply" class="resize-none w-full h-32 text-xl border-none outline-none focus:outline-none focus:ring-gray-100 focus:border-gray-100"></textarea>
+  <textarea name="reply" id="reply" class="resize-none w-full h-32 text-xl border-none outline-none focus:outline-none focus:ring-gray-100 focus:border-gray-100">{{ old('reply') }}</textarea>
+  <x-error-message field="reply" />
   <x-button value="返信する"/>
 </form>
 @foreach ($tweet->replies as $reply)

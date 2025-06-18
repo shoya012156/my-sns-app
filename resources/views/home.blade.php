@@ -6,7 +6,8 @@
 <x-flash-message namespace="tweet" />
 <form action="{{ route('tweets.store') }}" method="POST" class="border-t-2 border-b-2 border-gray-100 text-right">
   @csrf
-  <textarea type="text" name="tweet" id="tweet" class="resize-none w-full h-32 text-xl  border-none outline-none focus:outline-none focus:ring-gray-100 focus:border-gray-100"></textarea>
+  <textarea type="text" name="tweet" id="tweet" class="resize-none w-full h-32 text-xl  border-none outline-none focus:outline-none focus:ring-gray-100 focus:border-gray-100">{{old('tweet')}}</textarea>
+  <x-error-message field="tweet"/>
   <x-button value="投稿する" />
 </form>
 <div>

@@ -31,14 +31,18 @@ class ReplyController extends Controller
     {
       $validated = $request->validate([
         'tweet_id' => 'required|exists:tweets,id',
+        'reply' => 'required|string|max:280'
+      ],[
+      'reply.required' => 'リプライ内容は必須です',
+      'reply.max' => 'ツイートは280文字以内で入力してください'
       ]);
 
-      $reply = $request->reply;
+
 
       Reply::create([
         'user_id' => Auth::id(),
         'tweet_id' => $validated['tweet_id'],
-        'reply' => $reply
+        'reply' => $validated['reply']
       ]);
       return redirect()->route('tweets.show',['id' => $validated['tweet_id']])->with('reply.success','返信しました');
     }
